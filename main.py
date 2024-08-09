@@ -1,9 +1,23 @@
-ismlar = ['Ali', 'Anvar', 'Daston', 'Bekzod', 'Abdulaziz', 'Kamron']
-for ism in ismlar:
-    print(f"{ism} do'stim qalaysan ishlaring yaxshimi")
-print("Kod 6 marta takrorlandi")
+def kopaytma(*sonlar):
+    natija = 1
+    for son in sonlar:
+        natija *= son
+    return natija
+print(kopaytma(5,9))
 
-sonlar = list(range(9,100,2))
-for son in sonlar:
-    print(f"{son} ning qubi {son**3} ga teng")
+
+talaba = {
+    'ism':'ism',
+    'familiya':'familiya'
+}
+def Talabalar(ism,familiya,**malumotlar):
+    """Avto haqidagi ma'lumotlarni lug'at ko'rinishdia qay.funksiya"""
+    malumotlar['ism']=ism
+    malumotlar['familiya']=familiya
+    return malumotlar
+talaba = Talabalar("Hasan", "Fayzulayev", fakultet='Ximiya', kurs=4)
+talaba1 = Talabalar("Husan", "Karimov", fakultet='Matematika', kurs=1)
+print(talaba)
+print(talaba1)
+
 
